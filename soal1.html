@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Gambar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="soal1.css">
+</head>
+<body onload="start_timer();">
+    <div class="box">
+        <span id="time">
+          00:10:00
+        </span>
+      </div>
+    <div id="soal1">
+        <article>
+            <img src="assets/Prasasitin.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        </article>
+        <footer>
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban1">
+        <button onclick="cek1()" class="submit">JAWAB</button>
+        <div id="salah1" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">COBA PERHATIKAN HURUF KAPITALNYA</font><br></center></div>
+        </footer>
+    </div>
+    <div id="soal2" style="display: none;">
+        <article>
+            <img src="assets/kerajaankediri.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        </article>
+        <footer>
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban2">
+        <button onclick="cek2()" class="submit">JAWAB</button>
+        <div id="salah2" style="display: none;">?
+            <center><font size="18" style="color: red; font-weight: bold;">ADUH, JAWABANMU SALAH!</font><br></center></div>
+        </footer>
+    </div>
+    <div id="soal3" style="display: none;">
+        <img src="assets/Samudera Pasai.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban3">
+        <button onclick="cek3()" class="submit">JAWAB</button>
+        <div id="salah3" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">ADUH, JAWABANMU SALAH!</font><br></center></div>
+    </div>
+    <div id="soal4" style="display: none;">
+        <img src="assets/Sriwiyaja Tebak.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban4">
+        <button onclick="cek4()" class="submit">JAWAB</button>
+        <div id="salah4" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">PRIT, SALAH!</font><br></center></div>
+    </div>
+    <div id="soal5" style="display: none;">
+        <img src="assets/sunanbonang.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban5">
+        <button onclick="cek5()" class="submit">JAWAB</button>
+        <div id="salah5" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">KOK SALAH? GAMPANG BANGET LOH!</font><br></center></div>
+    </div>
+    <div id="soal6" style="display: none;">
+        <img src="assets/Adityawarman.jpg" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban6">
+        <button onclick="cek6()" class="submit">JAWAB</button>
+        <div id="salah6" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">HAYO, COBA DITEBAK LAGI</font><br></center></div>
+    </div>
+    <div id="soal7" style="display: none;">
+        <img src="assets/Kerajaan Hindu.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban7">
+        <button onclick="cek7()" class="submit">JAWAB</button>
+        <div id="salah7" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">ADUH, JAWABANMU SALAH!</font><br></center></div>
+    </div>
+    <div id="soal8" style="display: none;">
+        <img src="assets/sunan kalijaga.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban8">
+        <button onclick="cek8()" class="submit">JAWAB</button>
+        <div id="salah8" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">KOK SALAH? GAMPANG BANGET LOH</font><br></center></div>
+    </div>
+    <div id="soal9" style="display: none;">
+        <img src="assets/rajabalaputradewa.jpeg" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban9">
+        <button onclick="cek9()" class="submit">JAWAB</button>
+        <div id="salah9" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">ADUH, JAWABANMU SALAH!</font><br></center></div>
+    </div>
+    <div id="soal10" style="display: none;">
+        <img src="assets/kerajaanmajapahit.png" style="display: block; margin: auto; margin-top: 5%; width: 900px; height: 300px;">
+        <input type="text" class="kolom" name="" placeholder="Tulis Jawabanmu" id="jawaban10">
+        <button onclick="cek10()" class="submit">JAWAB</button>
+        <div id="salah10" style="display: none;">
+            <center><font size="18" style="color: red; font-weight: bold;">KOK SALAH LAGI?</font><br></center></div>
+    </div>
+    <div id="waktu" style="display: none;">
+        <center><font size="900%" style="color: red; font-weight: bold;">YAH, KAMU KEHABISAN WAKTU! :(</font></center>
+        <center><font size = "4" style="font-weight: bold;">SILAHKAN REFRESH HALAMAN INI DAN COBA ULANG YA!</font></center>
+        <center><img src="assets/Mengsedih.png" alt=""></center></div>
+    <div id="selesai" style="display: none;">
+        <center><font size="18" style="font-weight: bold; color: yellow; text-shadow: 1px 1px black;">SELAMAT!</font></center>
+        <center><font size="6" style="font-weight: bold;">KAMU TELAH MENYELESAIKAN GAME INI :D</font></center>
+        <center><img src="assets/Menggokil.jpg" alt=""></center>
+    </div>
+    <div class="bg-rounded"></div>
+</body>
+<script>
+    function cek1(){
+        var jawaban1 = document.getElementById("jawaban1").value
+        var jawabanBenar1 = "Prasasti"
+        if(jawaban1 == jawabanBenar1){
+            document.getElementById("soal2").style.display = "block"
+            document.getElementById("soal1").style.display = "none"
+        }else{
+            document.getElementById("salah1").style.display = "block"
+        }
+    }
+    function cek2(){
+        var jawaban2 = document.getElementById("jawaban2").value
+        var jawabanBenar2 = "Kerajaan Kediri"
+        if(jawaban2 == jawabanBenar2){
+            document.getElementById("soal2").style.display = "none"
+            document.getElementById("soal3").style.display = "block"
+        }else{
+            document.getElementById("salah2").style.display = "block"
+        }
+    }
+    function cek3(){
+        var jawaban3 = document.getElementById("jawaban3").value
+        var jawabanBenar3 = "Samudera Pasai"
+        if(jawaban3 == jawabanBenar3){
+            document.getElementById("soal3").style.display = "none"
+            document.getElementById("soal4").style.display = "block"
+        }else{
+            document.getElementById("salah3").style.display = "block"
+        }
+    }
+    function cek4(){
+        var jawaban4 = document.getElementById("jawaban4").value
+        var jawabanBenar4 = "Sriwijaya"
+        if(jawaban4 == jawabanBenar4){
+            document.getElementById("soal4").style.display = "none"
+            document.getElementById("soal5").style.display = "block"
+        }else{
+            document.getElementById("salah4").style.display = "block"
+        }
+    }
+    function cek5(){
+        var jawaban5 = document.getElementById("jawaban5").value
+        var jawabanBenar5 = "Sunan Bonang"
+        if(jawaban5 == jawabanBenar5){
+            document.getElementById("soal5").style.display = "none"
+            document.getElementById("soal6").style.display = "block"
+        }else{
+            document.getElementById("salah5").style.display = "block"
+        }
+    }
+    function cek6(){
+        var jawaban6 = document.getElementById("jawaban6").value
+        var jawabanBenar6 = "Adityawarman"
+        if(jawaban6 == jawabanBenar6){
+            document.getElementById("soal6").style.display = "none"
+            document.getElementById("soal7").style.display = "block"
+        }else{
+            document.getElementById("salah6").style.display = "block"
+        }
+    }
+    function cek7(){
+        var jawaban7 = document.getElementById("jawaban7").value
+        var jawabanBenar7 = "Kerajaan Hindu"
+        if(jawaban7 == jawabanBenar7){
+            document.getElementById("soal7").style.display = "none"
+            document.getElementById("soal8").style.display = "block"
+        }else{
+            document.getElementById("salah7").style.display = "block"
+        }
+    }
+    function cek8(){
+        var jawaban8 = document.getElementById("jawaban8").value
+        var jawabanBenar8 = "Sunan Kalijaga"
+        if(jawaban8 == jawabanBenar8){
+            document.getElementById("soal8").style.display = "none"
+            document.getElementById("soal9").style.display = "block"
+        }else{
+            document.getElementById("salah8").style.display = "block"
+        }
+    }
+    function cek9(){
+        var jawaban9 = document.getElementById("jawaban9").value
+        var jawabanBenar9 = "Raja Balaputradewa"
+        if(jawaban9 == jawabanBenar9){
+            document.getElementById("soal9").style.display = "none"
+            document.getElementById("soal10").style.display = "block"
+        }else{
+            document.getElementById("salah9").style.display = "block"
+        }
+    }
+    function cek10(){
+        var jawaban10 = document.getElementById("jawaban10").value
+        var jawabanBenar10 = "Kerajaan Majapahit"
+        if(jawaban10 == jawabanBenar10){
+            document.getElementById("soal10").style.display = "none"
+            document.getElementById("selesai").style.display = "block"
+        }else{
+            document.getElementById("salah10").style.display = "block"
+        }
+    }
+    function start_timer(){
+      var timer = document.getElementById("time").innerHTML;
+      var arr = timer.split(":");
+      var hour = arr[0];
+      var min = arr[1];
+      var sec = arr[2];
+      if(sec == 0) {
+        if(min == 0) {
+          if(hour == 0) {
+            document.getElementById("soal1").style.display = "none"
+            document.getElementById("soal2").style.display = "none"
+            document.getElementById("soal3").style.display = "none"
+            document.getElementById("soal4").style.display = "none"
+            document.getElementById("soal5").style.display = "none"
+            document.getElementById("soal6").style.display = "none"
+            document.getElementById("soal7").style.display = "none"
+            document.getElementById("soal8").style.display = "none"
+            document.getElementById("soal9").style.display = "none"
+            document.getElementById("soal10").style.display = "none"
+            document.getElementById("selesai").style.display = "none"
+            document.getElementById("waktu").style.display = "block"
+            return;
+          }
+          hour--;
+          min = 60;
+          if(hour < 10) hour = "0" + hour;
+        }
+        min--;
+        if(min < 10) min = "0" + min;
+        sec = 59;
+      }
+      else sec--;
+      if (sec < 10) sec == "0" + sec;
+ 
+      document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+      setTimeout(start_timer, 1000);
+    }
+</script>
+</html>
